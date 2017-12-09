@@ -57,7 +57,6 @@ function handleMessage(sender_psid, received_message) {
 
     // Create the payload for a basic text message
     response = {
-      "messaging_type": "RESPONSE",
       "text": `"${received_message.text}"`
     }
   } else if (received_message.attachments) {
@@ -115,6 +114,7 @@ function handlePostback(sender_psid, received_postback) {
 function callSendAPI(sender_psid, response) {
   // Construct the message body
   let request_body = {
+    "messaging_type": "RESPONSE"
     "recipient": {
       "id": sender_psid
     },
