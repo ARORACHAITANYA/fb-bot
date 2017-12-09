@@ -57,7 +57,7 @@ function handleMessage(sender_psid, received_message) {
 
     // Create the payload for a basic text message
     response = {
-      "messaging_type": "RESPONSE"
+      "messaging_type": "RESPONSE",
       "text": `"${received_message.text}"`
     }
   } else if (received_message.attachments) {
