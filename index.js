@@ -57,7 +57,7 @@ function handleMessage(sender_psid, received_message) {
 
     // Create the payload for a basic text message
     response = {
-      "messaging_type": "RESPONSE",
+      "messaging_type": "RESPONSE"
       "text": `"${received_message.text}"`
     }
   } else if (received_message.attachments) {
@@ -92,7 +92,11 @@ function handleMessage(sender_psid, received_message) {
   
   } 
 
-  function handlePostback(sender_psid, received_postback) {
+  // Sends the response message
+  callSendAPI(sender_psid, response);    
+}
+
+function handlePostback(sender_psid, received_postback) {
   let response;
   
   // Get the payload for the postback
@@ -106,10 +110,6 @@ function handleMessage(sender_psid, received_message) {
   }
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
-}
-   
-  // Sends the response message
-  callSendAPI(sender_psid, response);    
 }
 
 function callSendAPI(sender_psid, response) {
