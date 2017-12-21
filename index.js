@@ -51,7 +51,7 @@ app.post('/webhook', (req, res) => {
 });
 
 function userInfo(sender_psid) {
-  request({
+  let info = request({
     "url": "https://graph.facebook.com/v2.6/${sender_psid}?fields=first_name,last_name,profile_pic&access_token=${token}",
     "method": "GET",
     "json": true
@@ -62,7 +62,7 @@ function userInfo(sender_psid) {
       console.error("Unable to send request:" + err);
     }
   });
-  return body.first_name;
+  return info.first_name;
 }
 
 function handleMessage(sender_psid, received_message) {
