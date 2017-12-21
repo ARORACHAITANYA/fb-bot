@@ -52,7 +52,7 @@ app.post('/webhook', (req, res) => {
 
 function userInfo(sender_psid) {
   let info = request({
-              "url": "https://graph.facebook.com/v2.6/${sender_psid}?fields=first_name,last_name,profile_pic&access_token=${token}"
+              "url": "https://graph.facebook.com/v2.6/${sender_psid}?fields=first_name,last_name,profile_pic&access_token=${token}",
               "method": "GET",
               "json": true
             }, (err, res, body) => {
