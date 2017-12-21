@@ -50,7 +50,24 @@ app.post('/webhook', (req, res) => {
 
 });
 
+function userInfo(sender_psid) {
+  let info = request({
+              "url": "https://graph.facebook.com/v2.6/${sender_psid}?fields=first_name,last_name,profile_pic&access_token=${token}"
+              "method": "GET",
+              "json": true
+            }, (err, res, body) => {
+              if (!err) {
+                console.log('request sent!')
+              } else {
+                console.error("Unable to send request:" + err);
+              }
+            });  
+  return info.first_name;
+}
+
 function handleMessage(sender_psid, received_message) {
+
+  let name = userInfo(sender_psid); 
 
   let response;
 
@@ -59,7 +76,7 @@ function handleMessage(sender_psid, received_message) {
 
     // Create the payload for a basic text message
     response = {
-      "text": `"${received_message.text}"`
+      "text": `"${name} sent ${received_message.text}"`
     }
   } else if (received_message.attachments) {
   
