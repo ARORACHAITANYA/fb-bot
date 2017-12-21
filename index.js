@@ -62,6 +62,7 @@ function userInfo(sender_psid) {
       console.error("Unable to send request:" + err);
     }
   });
+  console.log(info)
   return info.first_name;
 }
 
