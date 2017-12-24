@@ -68,13 +68,13 @@ function userInfo(sender_psid) {
 
 function handleMessage(sender_psid, received_message) {
 
-  let name = userInfo(sender_psid); 
+  //let name = userInfo(sender_psid); 
 
-  let response;
+  let response;  
 
   // Check if the message contains text
   if (received_message.text) {    
-    response = decideMessage(received_message.text)
+    response = decideMessage(received_message.text);
     
   } else if (received_message.attachments) {
   
@@ -164,7 +164,7 @@ function decideMessage(text1) {
     }
   } else{
     response = {
-      "text": `"${name} sent ${received_message.text}"`
+      "text": `"${text1}"`
     }
   }
 
