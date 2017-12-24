@@ -74,11 +74,8 @@ function handleMessage(sender_psid, received_message) {
 
   // Check if the message contains text
   if (received_message.text) {    
-
-    // Create the payload for a basic text message
-    response = {
-      "text": `"${name} sent ${received_message.text}"`
-    }
+    response = decideMessage(received_message.text)
+    
   } else if (received_message.attachments) {
   
     // Gets the URL of the message attachment
@@ -129,6 +126,49 @@ function handlePostback(sender_psid, received_postback) {
   }
   // Send the message to acknowledge the postback
   callSendAPI(sender_psid, response);
+}
+
+function decideMessage(text1) {
+  let text = text1.toLowerCase();
+  let response;
+  if (text.includes("course") || text.includes("curicullum")) {
+     response = {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": [{
+            "title": "Course Curicullum",
+            "subtitle": "Click on the heading to view",
+            "image_url": "https://nsit101.weebly.com/uploads/9/7/6/9/97691126/background-images/853635501.jpeg",
+            "buttons": [
+              {
+                "type": "web_url",
+                "url": "http://www.nsit.ac.in/static/documents/COE_c.pdf",
+                "title": "Computer Engineering"                
+              },
+              {
+                "type": "web_url",
+                "url": "http://www.nsit.ac.in/static/documents/IT_c.pdf",
+                "title": "Information Technology"                
+              },
+              {
+                "type": "web_url",
+                "url": "http://www.nsit.ac.in/static/documents/ICE_c.pdf",
+                "title": "Instrumentation and Control Engineering"
+              }
+            ],
+          }]
+        }
+      }
+    }
+  } else{
+    response = {
+      "text": `"${name} sent ${received_message.text}"`
+    }
+  }
+
+  return response;
 }
 
 function callSendAPI(sender_psid, response) {
