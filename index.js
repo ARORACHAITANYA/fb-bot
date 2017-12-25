@@ -159,7 +159,9 @@ function decideMessage(text1) {
               }
             ]
           },
-          {
+          { "title": "Course Curicullum",
+            "subtitle": "Click on the heading to view",
+            "image_url": "https://nsit101.weebly.com/uploads/9/7/6/9/97691126/background-images/853635501.jpeg",
             "buttons": [  
               {
                 "type": "web_url",
@@ -178,7 +180,9 @@ function decideMessage(text1) {
               }
             ]
           },
-          {
+          { "title": "Course Curicullum",
+            "subtitle": "Click on the heading to view",
+            "image_url": "https://nsit101.weebly.com/uploads/9/7/6/9/97691126/background-images/853635501.jpeg",
             "buttons": [
               {
                 "type": "web_url",
