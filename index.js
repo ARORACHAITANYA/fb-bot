@@ -145,17 +145,37 @@ function decideMessage(text1) {
               {
                 "type": "web_url",
                 "url": "http://www.nsit.ac.in/static/documents/COE_c.pdf",
-                "title": "Computer Engineering"                
+                "title": "COE"                
               },
               {
                 "type": "web_url",
                 "url": "http://www.nsit.ac.in/static/documents/IT_c.pdf",
-                "title": "Information Technology"                
+                "title": "IT"                
               },
               {
                 "type": "web_url",
                 "url": "http://www.nsit.ac.in/static/documents/ICE_c.pdf",
-                "title": "Instrumentation and Control Engineering"
+                "title": "ICE"
+              },
+              {
+                "type": "web_url",
+                "url": "http://www.nsit.ac.in/static/documents/ECE_c.pdf",
+                "title": "ECE"
+              },
+              {
+                "type": "web_url",
+                "url": "http://www.nsit.ac.in/static/documents/ME_c.pdf",
+                "title": "ME"
+              },
+              {
+                "type": "web_url",
+                "url": "http://www.nsit.ac.in/static/documents/MPAE_c.pdf",
+                "title": "MPAE"
+              },
+              {
+                "type": "web_url",
+                "url": "http://www.nsit.ac.in/static/documents/BT_c.pdf",
+                "title": "BT"
               }
             ],
           }]
