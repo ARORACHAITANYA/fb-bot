@@ -156,7 +156,11 @@ function decideMessage(text1) {
                 "type": "web_url",
                 "url": "http://www.nsit.ac.in/static/documents/ICE_c.pdf",
                 "title": "ICE"
-              },
+              }
+            ]
+          },
+          {
+            "buttons": [  
               {
                 "type": "web_url",
                 "url": "http://www.nsit.ac.in/static/documents/ECE_c.pdf",
@@ -171,7 +175,11 @@ function decideMessage(text1) {
                 "type": "web_url",
                 "url": "http://www.nsit.ac.in/static/documents/MPAE_c.pdf",
                 "title": "MPAE"
-              },
+              }
+            ]
+          },
+          {
+            "buttons": [
               {
                 "type": "web_url",
                 "url": "http://www.nsit.ac.in/static/documents/BT_c.pdf",
